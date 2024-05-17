@@ -46,11 +46,19 @@ client.on('messageCreate',(msg)=>{
             msg.reply("makasih  sayang :3");
         }else{msg.reply("Terimakasih!");}
         
-    } if (msg.content===("NSFW")) {
+    } 
+    if (msg.content===("NSFW")) {
+      if (msg.author.id==='717576420037230623'){
+        msg.reply({
+          content: `Si-silahkan master...`,
+          files: [{ attachment: './image/sus.jpg'}]
+        });
+      }else{
         msg.reply({
           content: `Hey ${msg.author}, Mau ngapain!,@everyone ada yg cabul!!!!`,
           files: [{ attachment: './image/sus1.jpg'}]
         });
+      }
 }
 	if (msg.content ==="halo beb") {
 		if (msg.author.id === '717576420037230623') {

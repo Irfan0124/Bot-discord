@@ -26,8 +26,7 @@ try {
         if(level.xp>=calculateLevelXp(level.level)){
             level.exp=0;
             level.level += 1;
-            message.channel.send(`${message.member}Selamat penggunjung kamu sudah naik ke level
-            ${level.level}!!!!!!!!`);
+            message.channel.send(`${message.member}Selamat penggunjung kamu sudah naik ke level${level.level}!!!!!!!!`);
         }
         await level.save().catch((err)=>{
             console.log(err);
