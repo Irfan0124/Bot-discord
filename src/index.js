@@ -4,7 +4,10 @@ const mongoose = require('mongoose');
 const AutoTimeout = require('./models/AutoTimeout');
 const eventHandler = require('./handler/eventHandler');
 
-const badwords = ['ajg', 'kontol', 'memek', 'asw'];
+const badwords = [
+    'anjing', 'babi', 'bangsat', 'bajingan', 'brengsek', 'goblok', 'gila',
+    'kontol', 'memek', 'ngentot', 'perek', 'pepek', 'tai', 'tolol'
+];
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -24,7 +27,7 @@ client.on('messageCreate', async (msg) => {
     // Check for bad words
     if (badwords.some(word => msg.content.includes(word))) {
         let userRecord = await AutoTimeout.findOne({ userId: msg.author.id });
-
+// if(userRecord='717576420037230623') return;
         if (!userRecord) {
             userRecord = new AutoTimeout({ userId: msg.author.id });
         }
